@@ -1,4 +1,4 @@
-namespace MediatrPipelinesPlayground;
+namespace MediatrPipelinesPlayground.Domain;
 
 public class WeatherForecast
 {

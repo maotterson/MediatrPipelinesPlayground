@@ -1,4 +1,6 @@
-﻿namespace MediatrPipelinesPlayground.Repositories;
+﻿using MediatrPipelinesPlayground.Domain;
+
+namespace MediatrPipelinesPlayground.Repositories;
 
 public class WeatherForecastRepository
 {
