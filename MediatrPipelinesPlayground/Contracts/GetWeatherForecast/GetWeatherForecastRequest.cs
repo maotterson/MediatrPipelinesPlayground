@@ -1,5 +1,7 @@
-﻿namespace MediatrPipelinesPlayground.Contracts.GetWeatherForecast;
+﻿using MediatR;
 
-public class GetWeatherForecastRequest
+namespace MediatrPipelinesPlayground.Contracts.GetWeatherForecast;
+
+public class GetWeatherForecastRequest : IRequest<GetWeatherForecastResponse>
 {
 }
