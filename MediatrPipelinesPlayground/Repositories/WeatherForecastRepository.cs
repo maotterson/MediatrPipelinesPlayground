@@ -6,8 +6,9 @@ public class WeatherForecastRepository
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
     };
-    public List<WeatherForecast> GetWeatherForecasts()
+    public async Task<List<WeatherForecast>> GetWeatherForecasts()
     {
+        await Task.Delay(100);
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
