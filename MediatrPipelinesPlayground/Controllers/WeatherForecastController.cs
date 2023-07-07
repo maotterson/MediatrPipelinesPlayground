@@ -22,6 +22,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public async Task<ActionResult<GetWeatherForecastResponse>> Get()
     {
-        var response = await _mediator.Send<GetWeatherForecastResponse>(new GetWeatherForecastRequest());
+        var response = await _mediator.Send(new GetWeatherForecastRequest());
+        return Ok(response);
     }
 }
