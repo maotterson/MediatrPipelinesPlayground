@@ -6,7 +6,8 @@ public static class GetWeatherForecastExtensions
     {
         return new GetWeatherForecastResponse
         {
-            Forecasts = weatherForecasts
+            Forecasts = weatherForecasts,
+            Timestamp = DateTime.UtcNow
         };
     }
 }
