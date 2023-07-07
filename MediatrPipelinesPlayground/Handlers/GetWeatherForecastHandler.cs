@@ -11,8 +11,10 @@ public class GetWeatherForecastHandler : IRequestHandler<GetWeatherForecastReque
     {
         _weatherForecastRepository = weatherForecastRepository;
     }
-    public Task<GetWeatherForecastResponse> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
+    public async Task<GetWeatherForecastResponse> Handle(GetWeatherForecastRequest request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var weatherForecasts = await _weatherForecastRepository.GetWeatherForecasts();
+        return weatherForecasts.ToDto();
     }
+
 }
