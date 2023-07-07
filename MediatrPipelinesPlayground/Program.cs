@@ -1,3 +1,5 @@
+using MediatrPipelinesPlayground.Handlers;
+using MediatrPipelinesPlayground.Repositories;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+// weather forecast services
+builder.Services.AddTransient<GetWeatherForecastHandler>();
+builder.Services.AddSingleton<WeatherForecastRepository>();
 
 var app = builder.Build();
 
