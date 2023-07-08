@@ -25,4 +25,11 @@ public class WeatherForecastController : ControllerBase
         var response = await _mediator.Send(new GetWeatherForecastRequest());
         return Ok(response);
     }
+
+    [HttpPost(Name = "GenerateWeatherForecast")]
+    public async Task<ActionResult<GenerateWeatherForecastResponse>> Generate()
+    {
+        var response = await _mediator.Send(new GenerateWeatherForecastRequest());
+        return Created(response);
+    }
 }
