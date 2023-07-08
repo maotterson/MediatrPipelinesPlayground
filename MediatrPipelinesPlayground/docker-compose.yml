@@ -23,8 +23,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=your_username
-      - POSTGRES_PASSWORD=your_password
-      - POSTGRES_DB=your_database
+      - POSTGRES_USER=fake_username
+      - POSTGRES_PASSWORD=fake_password
+      - POSTGRES_DB=fake_database
     volumes:
       - ./pgdata:/var/lib/postgresql/data
