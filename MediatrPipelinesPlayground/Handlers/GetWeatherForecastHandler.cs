@@ -6,8 +6,8 @@ namespace MediatrPipelinesPlayground.Handlers;
 
 public class GetWeatherForecastHandler : IRequestHandler<GetWeatherForecastRequest, GetWeatherForecastResponse>
 {
-    private readonly WeatherForecastRepository _weatherForecastRepository;
-    public GetWeatherForecastHandler(WeatherForecastRepository weatherForecastRepository)
+    private readonly IWeatherForecastRepository _weatherForecastRepository;
+    public GetWeatherForecastHandler(IWeatherForecastRepository weatherForecastRepository)
     {
         _weatherForecastRepository = weatherForecastRepository;
     }
