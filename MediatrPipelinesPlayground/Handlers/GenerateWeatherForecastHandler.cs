@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MediatrPipelinesPlayground.Contracts.GenerateWeatherForecast;
 using MediatrPipelinesPlayground.Contracts.GetWeatherForecast;
+using MediatrPipelinesPlayground.Contracts.Models;
 using MediatrPipelinesPlayground.Repositories;
 
 namespace MediatrPipelinesPlayground.Handlers;
