@@ -1,5 +1,8 @@
+using MediatrPipelinesPlayground.Database;
 using MediatrPipelinesPlayground.Handlers;
 using MediatrPipelinesPlayground.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +19,9 @@ builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assemb
 // weather forecast services
 builder.Services.AddTransient<GetWeatherForecastHandler>();
 builder.Services.AddSingleton<WeatherForecastRepository>();
+
+builder.Services.AddDbContext<WeatherDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("SamplePostgresUnsecureConnectionString"))); // replace with an actual connection string
 
 var app = builder.Build();
 
