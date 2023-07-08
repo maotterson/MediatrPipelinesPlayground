@@ -1,5 +1,7 @@
 using MediatR;
+using MediatrPipelinesPlayground.Contracts.GenerateWeatherForecast;
 using MediatrPipelinesPlayground.Contracts.GetWeatherForecast;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrPipelinesPlayground.Controllers;
@@ -30,6 +32,7 @@ public class WeatherForecastController : ControllerBase
     public async Task<ActionResult<GenerateWeatherForecastResponse>> Generate()
     {
         var response = await _mediator.Send(new GenerateWeatherForecastRequest());
-        return Created(response);
+        var url = Request.GetDisplayUrl();
+        return Created(url, response);
     }
 }
