@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{FC67423F
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleContainerizedWorkerService", "SampleContainerizedWorkerService\SampleContainerizedWorkerService.csproj", "{D46A3031-BF51-4C32-A455-CF883734F94B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{1D9E80DE-BD62-4BDA-B410-E235AAA65AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9E80DE-BD62-4BDA-B410-E235AAA65AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9E80DE-BD62-4BDA-B410-E235AAA65AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46A3031-BF51-4C32-A455-CF883734F94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46A3031-BF51-4C32-A455-CF883734F94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46A3031-BF51-4C32-A455-CF883734F94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46A3031-BF51-4C32-A455-CF883734F94B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
