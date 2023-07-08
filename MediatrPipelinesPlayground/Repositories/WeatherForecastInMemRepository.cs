@@ -2,7 +2,7 @@
 
 namespace MediatrPipelinesPlayground.Repositories;
 
-public class WeatherForecastRepository
+public class WeatherForecastInMemRepository
 {
     private static readonly string[] Summaries = new[]
     {

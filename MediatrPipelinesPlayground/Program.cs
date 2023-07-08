@@ -18,7 +18,7 @@ builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assemb
 
 // weather forecast services
 builder.Services.AddTransient<GetWeatherForecastHandler>();
-builder.Services.AddSingleton<WeatherForecastRepository>();
+builder.Services.AddSingleton<IWeatherForecastRepository, WeatherForecastPostgresRepository>();
 
 builder.Services.AddDbContext<WeatherDbContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("SamplePostgresUnsecureConnectionString"))); // replace with an actual connection string
