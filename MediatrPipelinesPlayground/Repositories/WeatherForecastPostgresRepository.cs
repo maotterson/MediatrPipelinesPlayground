@@ -15,4 +15,14 @@ public class WeatherForecastPostgresRepository : IWeatherForecastRepository
     {
         return await _weatherDbContext.WeatherForecasts.ToListAsync();
     }
+    public async Task<WeatherForecast> GenerateWeatherForecast()
+    {
+        var mostRecentForecast = await _weatherDbContext.WeatherForecasts.LastAsync();
+        var generatedDate = DateTime.Now.AddDays(1);
+        if(mostRecentForecast is not null) 
+        {
+            generatedDate = mostRecentForecast.Date.AddDays(1);
+        }
+        return await _weatherDbContext.WeatherForecasts.AddAsync(ForecastGenerator.GenerateWeatherForecast(generatedDate));
+    }
 }
