@@ -1,5 +1,6 @@
 ﻿using MediatrPipelinesPlayground.Database;
 using MediatrPipelinesPlayground.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediatrPipelinesPlayground.Repositories;
 
@@ -10,8 +11,8 @@ public class WeatherForecastPostgresRepository : IWeatherForecastRepository
     {
         _weatherDbContext = weatherDbContext;
     }
-    public Task<List<WeatherForecast>> GetWeatherForecasts()
+    public async Task<List<WeatherForecast>> GetWeatherForecasts()
     {
-        throw new NotImplementedException();
+        return await _weatherDbContext.WeatherForecasts.ToListAsync();
     }
 }
