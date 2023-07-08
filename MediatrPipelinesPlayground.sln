@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{FC67423F-9407-42EB-8A0E-5F8D8FEFA90A}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+		nginx.conf = nginx.conf
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleContainerizedWorkerService", "SampleContainerizedWorkerService\SampleContainerizedWorkerService.csproj", "{D46A3031-BF51-4C32-A455-CF883734F94B}"
