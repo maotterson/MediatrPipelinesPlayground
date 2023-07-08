@@ -26,7 +26,7 @@ builder.Services.AddDbContext<WeatherDbContext>(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (true || app.Environment.IsDevelopment()) // remove true to remove swagger ui in actual production env
 {
     app.UseSwagger();
     app.UseSwaggerUI();
