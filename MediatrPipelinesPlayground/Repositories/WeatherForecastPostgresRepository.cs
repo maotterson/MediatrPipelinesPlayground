@@ -1,5 +1,6 @@
 ﻿using MediatrPipelinesPlayground.Database;
 using MediatrPipelinesPlayground.Domain;
+using MediatrPipelinesPlayground.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace MediatrPipelinesPlayground.Repositories;
@@ -23,6 +24,7 @@ public class WeatherForecastPostgresRepository : IWeatherForecastRepository
         {
             generatedDate = mostRecentForecast.Date.AddDays(1);
         }
-        return await _weatherDbContext.WeatherForecasts.AddAsync(ForecastGenerator.GenerateWeatherForecast(generatedDate));
+        var addedEntry = await _weatherDbContext.WeatherForecasts.AddAsync(ForecastGenerator.GenerateWeatherForecast(generatedDate));
+        return addedEntry.Entity;
     }
 }
