@@ -10,9 +10,7 @@ services:
       - 8443:443
 
   app2:
-    build:
-      context: .
-      dockerfile: ./MediatrPipelinesPlayground/Dockerfile
+    image: hello-world
     ports:
       - 8081:80
       - 8444:443
