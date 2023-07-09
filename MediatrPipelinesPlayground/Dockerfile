@@ -7,11 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MediatrPipelinesPlayground.csproj", "MediatrPipelinesPlayground/"]
+COPY ["MediatrPipelinesPlayground/MediatrPipelinesPlayground.csproj", "MediatrPipelinesPlayground/"]
 RUN dotnet restore "MediatrPipelinesPlayground/MediatrPipelinesPlayground.csproj"
-WORKDIR "/src/MediatrPipelinesPlayground"
 COPY . .
-RUN dotnet build "MediatrPipelinesPlayground.csproj" -c Release -o /app/build
+WORKDIR "/src/MediatrPipelinesPlayground"
+RUN dotnet build "MediatrPipelinesPlayground/MediatrPipelinesPlayground.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "MediatrPipelinesPlayground.csproj" -c Release -o /app/publish /p:UseAppHost=false
