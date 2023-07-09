@@ -24,7 +24,7 @@ builder.Services.AddSingleton<IWeatherForecastRepository, WeatherForecastPostgre
 
 
 builder.Services.AddDbContext<WeatherDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("SamplePostgresUnsecureConnectionString"))); // replace with an actual connection string
+        options.UseNpgsql(Environment.GetEnvironmentVariable("DB_CONNECTION_STRING"))); // replace with an actual connection string
 
 var app = builder.Build();
 

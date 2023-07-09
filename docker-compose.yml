@@ -24,6 +24,10 @@ services:
     ports:
       - 8080:80
       - 8443:443
+    depends_on:
+      - db
+    environment:
+      DB_CONNECTION_STRING: "host=db;port=5432;database=fake_database;username=fake_username;password=fake_password"
     networks:
       - sample-network
 
@@ -40,9 +44,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=fake_username
-      - POSTGRES_PASSWORD=fake_password
-      - POSTGRES_DB=fake_database
+      POSTGRES_USER: "fake_username"
+      POSTGRES_PASSWORD: "fake_password"
+      POSTGRES_DB: "fake_database"
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     networks:
