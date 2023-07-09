@@ -12,6 +12,7 @@ public static class ForecastGenerator
     {
         var forecast = new WeatherForecast
         {
+            Id = Guid.NewGuid(),
             Date = generatedDate,
             TemperatureC = Random.Shared.Next(-20, 55),
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
