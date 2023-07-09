@@ -5,10 +5,10 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["SampleContainerizedWorkerService.csproj", "SampleContainerizedWorkerService/"]
+COPY ["SampleContainerizedWorkerService/SampleContainerizedWorkerService.csproj", "SampleContainerizedWorkerService/"]
 RUN dotnet restore "SampleContainerizedWorkerService/SampleContainerizedWorkerService.csproj"
-WORKDIR "/src/SampleContainerizedWorkerService"
 COPY . .
+WORKDIR "/src/SampleContainerizedWorkerService"
 RUN dotnet build "SampleContainerizedWorkerService.csproj" -c Release -o /app/build
 
 FROM build AS publish
