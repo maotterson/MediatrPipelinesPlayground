@@ -6,8 +6,16 @@ services:
       context: .
       dockerfile: ./MediatrPipelinesPlayground/Dockerfile
     ports:
-      - 80:80
-      - 443:443
+      - 8080:80
+      - 8443:443
+
+  app2:
+    build:
+      context: .
+      dockerfile: ./MediatrPipelinesPlayground/Dockerfile
+    ports:
+      - 8081:80
+      - 8444:443
 
   cli:
     build:
