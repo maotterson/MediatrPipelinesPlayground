@@ -25,6 +25,7 @@ public class WeatherForecastPostgresRepository : IWeatherForecastRepository
             generatedDate = mostRecentForecast.Date.AddDays(1);
         }
         var addedEntry = await _weatherDbContext.WeatherForecasts.AddAsync(ForecastGenerator.GenerateWeatherForecast(generatedDate));
+        await _weatherDbContext.SaveChangesAsync();
         return addedEntry.Entity;
     }
 }
