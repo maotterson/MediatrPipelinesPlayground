@@ -33,6 +33,8 @@ if (true || app.Environment.IsDevelopment()) // remove true to remove swagger ui
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    var ctx = app.Services.GetRequiredService<WeatherDbContext>();
+    ctx.Database.EnsureCreated();
 }
 
 
