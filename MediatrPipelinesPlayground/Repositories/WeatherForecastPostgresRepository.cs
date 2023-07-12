@@ -19,7 +19,7 @@ public class WeatherForecastPostgresRepository : IWeatherForecastRepository
     public async Task<WeatherForecast> GenerateWeatherForecast()
     {
         var mostRecentForecast = await _weatherDbContext.WeatherForecasts.OrderBy(w => w.Date).LastOrDefaultAsync();
-        var generatedDate = DateTime.Now.AddDays(1);
+        var generatedDate = DateTime.UtcNow.AddDays(1);
         if(mostRecentForecast is not null) 
         {
             generatedDate = mostRecentForecast.Date.AddDays(1);
