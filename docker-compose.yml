@@ -31,8 +31,10 @@ services:
     networks:
       - sample-network
 
-  app2:
-    image: dockersamples/static-site
+  auth:
+    build:
+      context: .
+      dockerfile: ./MediatrPipelinesPlayground.Auth/Dockerfile
     ports:
       - 8081:80
       - 8444:443
