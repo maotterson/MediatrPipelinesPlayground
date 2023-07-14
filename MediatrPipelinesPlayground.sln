@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{FC67423F
 		nginx.conf = nginx.conf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleContainerizedWorkerService", "SampleContainerizedWorkerService\SampleContainerizedWorkerService.csproj", "{D46A3031-BF51-4C32-A455-CF883734F94B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleContainerizedWorkerService", "SampleContainerizedWorkerService\SampleContainerizedWorkerService.csproj", "{D46A3031-BF51-4C32-A455-CF883734F94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrPipelinesPlayground.Auth", "MediatrPipelinesPlayground.Auth\MediatrPipelinesPlayground.Auth.csproj", "{EB528F1C-B13A-4C11-BE43-4E2E5CF86141}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +30,10 @@ Global
 		{D46A3031-BF51-4C32-A455-CF883734F94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D46A3031-BF51-4C32-A455-CF883734F94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D46A3031-BF51-4C32-A455-CF883734F94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB528F1C-B13A-4C11-BE43-4E2E5CF86141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB528F1C-B13A-4C11-BE43-4E2E5CF86141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB528F1C-B13A-4C11-BE43-4E2E5CF86141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB528F1C-B13A-4C11-BE43-4E2E5CF86141}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
